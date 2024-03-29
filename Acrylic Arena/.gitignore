@@ -61,9 +61,6 @@ sysinfo.txt
 *.unitypackage
 *.app
 
-
-*text=auto eol=lf
-
 # Crashlytics generated file
 crashlytics-build.properties
 
