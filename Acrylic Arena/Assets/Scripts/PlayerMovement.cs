@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 4f;
     public Rigidbody rb;
 
     Vector3 movement;
@@ -14,6 +14,14 @@ public class PlayerMovement : MonoBehaviour
         //input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 8f;
+        }
+        else
+        {
+            moveSpeed = 4f;
+        }
         
     }
 
