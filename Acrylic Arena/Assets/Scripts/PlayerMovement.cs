@@ -6,9 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 4f;
     public Rigidbody rb;
-
+    public CombatController combat;
     Vector3 movement;
 
+
+    private void Start()
+    {
+        combat = GetComponent<CombatController>();
+    }
     void Update()
     {
         //input
@@ -18,9 +23,16 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = 8f;
         }
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            moveSpeed = 2f;
+            combat.checkmode = true;
+            //playerMovement.moveSpeed = 2f;
+        }
         else
         {
             moveSpeed = 4f;
+            combat.checkmode = false;
         }
         
     }
